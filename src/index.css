@@ -1,13 +1,46 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#planet-logo {
+    width: 30px;
+    height: 30px;
+}
+
+nav {
+    width: 80%;
+    margin: auto;
+}
+
+nav,
+#logo,
+#links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+  }
+
+td:nth-child(4), th:nth-child(4) {
+    border-right: 1px solid #ddd;
+}
+
+tr:nth-child(1) {
+    border-top: 1px solid #ddd;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+#empty-header {
+    color: rgba(0, 0, 0, 0);
 }
