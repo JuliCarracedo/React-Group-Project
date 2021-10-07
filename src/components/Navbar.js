@@ -6,12 +6,12 @@ const Navbar = () => (
   <nav>
     <div id="logo">
       <img id="planet-logo" alt="planet" src={logo} />
-      <p>Space Traveler&apos;s Hub</p>
+      <p className="space-traveler">Space Traveler&apos;s Hub</p>
     </div>
     <div id="links">
-      <NavLink activeStyle={{ color: 'red' }} exact to="/">Rockets</NavLink>
-      <NavLink activeStyle={{ color: 'red' }} to="/missions">Missions</NavLink>
-      <NavLink activeStyle={{ color: 'red' }} to="/profile"> My Profile </NavLink>
+      <NavLink className="navlink" activeStyle={{ textDecoration: 'underline' }} exact to="/">Rockets</NavLink>
+      <NavLink className="navlink" activeStyle={{ textDecoration: 'underline' }} to="/missions">Missions</NavLink>
+      <NavLink className="navlink" activeStyle={{ textDecoration: 'underline' }} to="/profile"> My Profile </NavLink>
     </div>
   </nav>
 );

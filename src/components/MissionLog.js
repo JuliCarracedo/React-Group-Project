@@ -1,16 +1,18 @@
-/* eslint-disable camelcase */
-
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import JoinBtn from './joinBtn';
+import MissionSpan from './missionSpan';
 
 const MissionLog = (props) => {
-  const { mission } = props;
-  const { mission_name, description } = mission;
+  const { mission, memberships, setMemberships } = props;
+  const { missionName, description } = mission;
+  memberships.includes(mission.name);
+  const [member, setMember] = useState(memberships.includes(mission.missionName) ? 'member' : 'notMember');
+
   return (
-    <tr>
-      <td>
-        {' '}
-        {mission_name}
-        {' '}
+    <tr className="row">
+      <td className="mission-name">
+        {missionName}
       </td>
       <td>
         {' '}
@@ -18,12 +20,18 @@ const MissionLog = (props) => {
       </td>
       <td>
         {' '}
-        <span className="member">Not a member</span>
+        <MissionSpan member={member} />
         {' '}
       </td>
       <td>
         {' '}
-        <button type="button">Join Mission</button>
+        <JoinBtn
+          member={member}
+          setMember={setMember}
+          mission={mission}
+          memberships={memberships}
+          setMemberships={setMemberships}
+        />
         {' '}
       </td>
     </tr>
@@ -32,6 +40,8 @@ const MissionLog = (props) => {
 
 MissionLog.propTypes = {
   mission: PropTypes.objectOf(PropTypes.any).isRequired,
+  memberships: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setMemberships: PropTypes.func.isRequired,
 };
 
 export default MissionLog;

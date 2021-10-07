@@ -11,8 +11,13 @@ export const loadFromApi = (missions) => (
 
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOAD:
-      return (action.missions);
+    case LOAD: {
+      const filteredMissions = action.missions.map((mission) => ({
+        missionId: mission.mission_id,
+        missionName: mission.mission_name,
+        description: mission.description,
+      }));
+      return (filteredMissions); }
     default:
       return state;
   }
