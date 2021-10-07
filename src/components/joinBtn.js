@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { joinMission, leaveMission } from '../redux/missions/missions';
 
 const JoinBtn = (props) => {
   const {
     setMember, member, memberships, setMemberships, mission,
   } = props;
-
+  const dispatch = useDispatch();
   const handleJoin = (e) => {
     e.preventDefault();
     setMember('member');
     setMemberships([...memberships, mission.missionName]);
+    dispatch(joinMission(mission.missionId));
   };
 
   const handleLeave = (e) => {
@@ -17,6 +20,7 @@ const JoinBtn = (props) => {
     setMemberships(memberships.filter(
       (membership) => membership !== mission.missionName,
     ));
+    dispatch(leaveMission(mission.missionId));
   };
   return (
     <div>
