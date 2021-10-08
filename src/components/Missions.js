@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import MissionLog from './MissionLog';
 
 const Missions = (props) => {
-  const { missions, memberships, setMemberships } = props;
+  const { missions } = props;
 
   return (
     <table>
@@ -19,8 +19,6 @@ const Missions = (props) => {
           <MissionLog
             key={mission.missionId}
             mission={mission}
-            memberships={memberships}
-            setMemberships={setMemberships}
           />
         ))}
       </tbody>
@@ -30,8 +28,6 @@ const Missions = (props) => {
 
 Missions.propTypes = {
   missions: PropTypes.arrayOf(PropTypes.object).isRequired,
-  memberships: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setMemberships: PropTypes.func.isRequired,
 };
 
 export default Missions;

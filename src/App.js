@@ -11,7 +11,6 @@ import Profile from './components/Profile';
 function App() {
   const dispatch = useDispatch();
   const [download, setDownload] = useState('idle');
-  const [memberships, setMemberships] = useState([]);
 
   useEffect(() => {
     if (download === 'idle') {
@@ -21,6 +20,7 @@ function App() {
   });
 
   const missionsList = useSelector((state) => state.missionsReducer);
+  console.log(missionsList);
 
   return (
     <div id="app-body">
@@ -31,11 +31,9 @@ function App() {
           <Route path="/missions">
             <Missions
               missions={missionsList || []}
-              memberships={memberships}
-              setMemberships={setMemberships}
             />
           </Route>
-          <Route path="/profile"><Profile memberships={memberships} /></Route>
+          <Route path="/profile"><Profile missions={missionsList} /></Route>
         </Switch>
       </Router>
     </div>

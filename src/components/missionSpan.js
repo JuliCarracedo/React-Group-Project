@@ -5,14 +5,14 @@ const MissionSpan = (props) => {
 
   return (
     <div>
-      {member === 'member' && <span className="member">Active member</span>}
-      {member === 'notMember' && <span className="not-member">Not a member</span>}
+      {member && <span className="member">Active member</span>}
+      {!member && <span className="not-member">Not a member</span>}
     </div>
   );
 };
 
 MissionSpan.propTypes = {
-  member: PropTypes.string.isRequired,
+  member: PropTypes.bool.isRequired,
 };
 
 export default MissionSpan;

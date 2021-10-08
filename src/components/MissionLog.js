@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import JoinBtn from './joinBtn';
 import MissionSpan from './missionSpan';
 
 const MissionLog = (props) => {
-  const { mission, memberships, setMemberships } = props;
+  const { mission } = props;
   const { missionName, description } = mission;
-  memberships.includes(mission.name);
-  const [member, setMember] = useState(memberships.includes(mission.missionName) ? 'member' : 'notMember');
 
   return (
     <tr className="row">
@@ -20,17 +17,13 @@ const MissionLog = (props) => {
       </td>
       <td>
         {' '}
-        <MissionSpan member={member} />
+        <MissionSpan member={mission.reserved} />
         {' '}
       </td>
       <td>
         {' '}
         <JoinBtn
-          member={member}
-          setMember={setMember}
           mission={mission}
-          memberships={memberships}
-          setMemberships={setMemberships}
         />
         {' '}
       </td>
@@ -40,8 +33,6 @@ const MissionLog = (props) => {
 
 MissionLog.propTypes = {
   mission: PropTypes.objectOf(PropTypes.any).isRequired,
-  memberships: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setMemberships: PropTypes.func.isRequired,
 };
 
 export default MissionLog;
