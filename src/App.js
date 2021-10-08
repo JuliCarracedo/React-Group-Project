@@ -20,7 +20,6 @@ function App() {
   });
 
   const missionsList = useSelector((state) => state.missionsReducer);
-  console.log(missionsList);
 
   return (
     <div id="app-body">

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 const Profile = (props) => {
   const { missions } = props;
   const joined = missions.filter((mission) => mission.reserved);
-  console.log(joined);
   return (
     <div>
       <h2 className="profile-title">My Missions</h2>
