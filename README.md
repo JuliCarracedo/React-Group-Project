@@ -25,23 +25,23 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 - Have Git bash installed
 - Have a code editor
-- Have NodeJS console installed
+- Have Yarn installed
 
 ### Setup
 
 - On any folder, use your Git Bash to clone the repository: ```git clone https://github.com/JuliCarracedo/React-Group-Project.git```
 - Open the created folder with your code editor
-- On your editor's command line run ```npm install```
+- On your editor's command line run ```yarn install```
 
 ### Usage
 
-- On your editor's command line run ```npm start```
+- On your editor's command line run ```yarn start```
 - Now you can join SpaceX missions on the missions tab. They wont persist on reload
 - Check your reserved missions in the Profile tab
 
 ### Run tests
 
-- On your editor's command line run ```npm test```
+- On your editor's command line run ```yarn test```
 
 ## Author
 
