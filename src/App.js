@@ -26,7 +26,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">rockets</Route>
+          <Route exact path="/">Under Construction</Route>
           <Route path="/missions">
             <Missions
               missions={missionsList || []}
